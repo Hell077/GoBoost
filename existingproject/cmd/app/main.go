@@ -1,0 +1,1 @@
+package main\n\nfunc main() {\n\t// TODO: Add your code here\n}
