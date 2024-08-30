@@ -2,12 +2,18 @@
 
 A simple tool for initializing a new Go project with a predefined structure.
 
+# Releases
+**You can download pre-built binaries from the Releases section. Each release includes:**
+```
+Windows: goBoost.exe
+```
+
 ## Installation
 
 1. **Clone this repository:**
 
    ```bash
-   git clone https://github.com/yourusername/go-project-initializer.git
+   git clone https://github.com/Hell077/GoBoost.git
    ```
 2. **Navigate to the directory and build the executable**
    ```bash
@@ -18,6 +24,8 @@ A simple tool for initializing a new Go project with a predefined structure.
     ```bash
     Copy-Item -Path .\go-init.exe -Destination "C:\Program Files\go-init.exe"
    ```
+
+
 
 **Usage**
 
