@@ -8,7 +8,7 @@ A simple tool for initializing a new Go project with a predefined structure.
 Windows: goBoost.exe
 ```
 
-## Installation
+## First Installation
 
 1. **Clone this repository:**
 
@@ -25,12 +25,26 @@ Windows: goBoost.exe
     Copy-Item -Path .\goBoost.exe -Destination "C:\Program Files\goBoost.exe"
    ```
 
+## Second Installation
 
-
-**Usage**
-
+1.  **Download the .exe file from the Releases page.**
+2. **Move the extracted files to a directory of your choice.
+  <br/> For example, you might place it in: 
+    ```bash
+   C:\Program Files\GoBoost.**
+   ```
+3. Add GoBoost to PATH:
+    - Open the Start Menu and search for "Environment Variables."<br/>
+    - Select "Edit the system environment variables."<br/>
+    - In the System Properties window, click on the "Environment Variables" button.<br/>
+    - In the Environment Variables window, locate the "Path" variable in the "System variables" section and click "Edit."<br/>
+    - Click "New" and add the path to the directory where you moved GoBoost (e.g., C:\Program Files\GoBoost).<br/>
+    - Click "OK" to close all open windows and apply the changes.<br/>
+4. **Usage**
+   - ``in cmd or ide or another terminal on windows`` <br/>
+   - ``follow the instructions inside the program``
   ```bash
-   goBoost.exe
+   goBoost
    ```
 
 **Project Structure**
