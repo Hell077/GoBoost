@@ -18,7 +18,7 @@ Windows: goBoost.exe
 2. **Navigate to the directory and build the executable**
    ```bash
     cd go-project-initializer
-    go build -o go-init.exe
+    go build -o goBoost.exe
    ```
 3. **Move the executable to a directory in your PATH (Optional)**
     ```bash
