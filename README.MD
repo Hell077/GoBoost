@@ -31,7 +31,7 @@ Windows: goBoost.exe
 2. **Move the extracted files to a directory of your choice.
   <br/> For example, you might place it in: 
     ```bash
-   C:\Program Files\GoBoost.**
+   C:\Program Files\GoBoost.
    ```
 3. Add GoBoost to PATH:
     - Open the Start Menu and search for "Environment Variables."<br/>
