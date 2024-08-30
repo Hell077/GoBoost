@@ -1,4 +1,4 @@
-package main
+package handlers
 
 import (
 	"bufio"
@@ -9,8 +9,9 @@ import (
 	"strings"
 )
 
-func main() {
+func CreateProject() {
 	reader := bufio.NewReader(os.Stdin)
+
 	// Prompt for project name
 	fmt.Print("Enter project name: ")
 	projectName, err := reader.ReadString('\n')
@@ -18,10 +19,9 @@ func main() {
 		fmt.Printf("Error reading project name: %v\n", err)
 		return
 	}
-
 	projectName = strings.TrimSpace(projectName)
 	if projectName == "" {
-		projectName = "default" // Fixed the assignment operator
+		projectName = "default"
 	}
 
 	// Prompt for project path
@@ -31,7 +31,6 @@ func main() {
 		fmt.Printf("Error reading project path: %v\n", err)
 		return
 	}
-
 	projectPath = strings.TrimSpace(projectPath)
 	if projectPath == "." {
 		projectPath, err = os.Getwd()
