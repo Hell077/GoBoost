@@ -22,7 +22,7 @@ Windows: goBoost.exe
    ```
 3. **Move the executable to a directory in your PATH (Optional)**
     ```bash
-    Copy-Item -Path .\go-init.exe -Destination "C:\Program Files\goBoost.exe"
+    Copy-Item -Path .\goBoost.exe -Destination "C:\Program Files\goBoost.exe"
    ```
 
 
