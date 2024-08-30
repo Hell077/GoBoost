@@ -11,7 +11,6 @@ import (
 
 func main() {
 	reader := bufio.NewReader(os.Stdin)
-
 	// Prompt for project name
 	fmt.Print("Enter project name: ")
 	projectName, err := reader.ReadString('\n')
@@ -19,7 +18,11 @@ func main() {
 		fmt.Printf("Error reading project name: %v\n", err)
 		return
 	}
+
 	projectName = strings.TrimSpace(projectName)
+	if projectName == "" {
+		projectName = "default" // Fixed the assignment operator
+	}
 
 	// Prompt for project path
 	fmt.Print("Enter project path (or '.' for current directory): ")
@@ -28,6 +31,7 @@ func main() {
 		fmt.Printf("Error reading project path: %v\n", err)
 		return
 	}
+
 	projectPath = strings.TrimSpace(projectPath)
 	if projectPath == "." {
 		projectPath, err = os.Getwd()
@@ -45,7 +49,6 @@ func main() {
 
 	fmt.Printf("Creating Go project: %s in %s\n", projectName, projectPath)
 
-	// Project structure
 	directories := []string{
 		"cmd/app",
 		"internal/server",
