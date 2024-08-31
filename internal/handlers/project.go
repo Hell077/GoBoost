@@ -3,13 +3,29 @@ package handlers
 import (
 	"bufio"
 	"fmt"
+	"github.com/Hell077/GoBoost/internal/handlers/templates/cli"
+	"github.com/Hell077/GoBoost/internal/handlers/templates/default"
+	"github.com/Hell077/GoBoost/internal/handlers/templates/microservices"
+	"github.com/Hell077/GoBoost/internal/handlers/templates/monorepo"
+	"github.com/Hell077/GoBoost/internal/handlers/templates/webapp"
+	"github.com/manifoldco/promptui"
 	"os"
-	"os/exec"
 	"path/filepath"
 	"strings"
 )
 
 func CreateProject() {
+	prompt := promptui.Select{
+		Label: "Select Project Template",
+		Items: []string{"Default", "Web App Template", "Microservices Template", "CLI App Template", "Monorepo Template"},
+	}
+
+	_, template, err := prompt.Run()
+	if err != nil {
+		fmt.Printf("Error selecting template: %v\n", err)
+		return
+	}
+
 	reader := bufio.NewReader(os.Stdin)
 
 	fmt.Print("Enter project name: ")
@@ -44,67 +60,20 @@ func CreateProject() {
 		return
 	}
 
-	fmt.Printf("Creating Go project: %s in %s\n", projectName, projectPath)
+	fmt.Printf("Creating Go project: %s in %s using template: %s\n", projectName, projectPath, template)
 
-	directories := []string{
-		"cmd/app",
-		"internal/server",
-		"pkg/utils",
+	switch template {
+	case "Default":
+		_default.CreateDefaultProject(projectDir, projectName)
+	case "Web App Template":
+		webapp.CreateWebAppTemplate(projectDir, projectName)
+	case "Microservices Template":
+		microservices.CreateMicroservicesTemplate(projectDir, projectName)
+	case "CLI App Template":
+		cli.CreateCLIAppTemplate(projectDir, projectName)
+	case "Monorepo Template":
+		monorepo.CreateMonorepoTemplate(projectDir, projectName)
 	}
 
-	files := map[string]string{
-		"cmd/app/main.go": `package main
-
-func main() {
-	// TODO: Add your code here
-}`,
-		"internal/server/server.go": `package server
-
-// TODO: Implement your server logic here
-`,
-		"pkg/utils/utils.go": `package utils
-
-// TODO: Add utility functions here
-`,
-		"README.md": "# " + projectName + `
-
-## Overview
-
-This is a Go project named ` + projectName + `.
-
-
-## Created by
-
-[GoBoost](https://github.com/Hell077/GoBoost)`,
-		".gitignore": `bin/
-*.exe
-*.log`,
-	}
-	for _, dir := range directories {
-		err := os.MkdirAll(filepath.Join(projectDir, dir), os.ModePerm)
-		if err != nil {
-			fmt.Printf("Error creating directory: %v\n", err)
-			return
-		}
-	}
-
-	for filePath, content := range files {
-		err := os.WriteFile(filepath.Join(projectDir, filePath), []byte(content), os.ModePerm)
-		if err != nil {
-			fmt.Printf("Error creating file: %v\n", err)
-			return
-		}
-	}
-
-	if err := os.Chdir(projectDir); err != nil {
-		fmt.Printf("Error changing directory: %v\n", err)
-		return
-	}
-
-	if _, err := exec.Command("go", "mod", "init", projectName).Output(); err != nil {
-		fmt.Printf("Error initializing Go module: %v\n", err)
-		return
-	}
-
-	fmt.Println("Go project created successfully!")
+	fmt.Print("Enter project name: ")
 }
