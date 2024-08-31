@@ -47,17 +47,10 @@ GoBoost is a simple tool for initializing a new Go project with a predefined str
 
 ## Project Structure
 
-````
-<project-name>
-├── cmd/
-│   └── app/
-│       └── main.go
-├── internal/
-│   └── server/
-│       └── server.go
-├── pkg/
-│   └── utils/
-│       └── utils.go
-├── README.md
-└── .gitignore
-````
+**GoBoost supports the following project templates:**
+
+- Default Template: A basic project structure for general Go applications.
+- Web App Template: A template for creating web applications with configuration and API support.
+- Microservices Template: A structure for building microservices with separate services and an API gateway.
+- CLI App Template: A template for creating CLI applications with a main command and additional scripts.
+- Monorepo Template: A structure for managing multiple applications and libraries within a single repository.
