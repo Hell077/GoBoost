@@ -12,7 +12,6 @@ import (
 func CreateProject() {
 	reader := bufio.NewReader(os.Stdin)
 
-	// Prompt for project name
 	fmt.Print("Enter project name: ")
 	projectName, err := reader.ReadString('\n')
 	if err != nil {
@@ -24,7 +23,6 @@ func CreateProject() {
 		projectName = "default"
 	}
 
-	// Prompt for project path
 	fmt.Print("Enter project path (or '.' for current directory): ")
 	projectPath, err := reader.ReadString('\n')
 	if err != nil {
@@ -55,13 +53,33 @@ func CreateProject() {
 	}
 
 	files := map[string]string{
-		"cmd/app/main.go":           `package main\n\nfunc main() {\n\t// TODO: Add your code here\n}`,
-		"internal/server/server.go": `package server\n\n// TODO: Implement your server logic here\n`,
-		"pkg/utils/utils.go":        `package utils\n\n// TODO: Add utility functions here\n`,
-		"README.md":                 "# " + projectName + "\n\n## Overview\n\nThis is a Go project named " + projectName,
-		".gitignore":                "bin/\n*.exe\n*.log",
-	}
+		"cmd/app/main.go": `package main
 
+func main() {
+	// TODO: Add your code here
+}`,
+		"internal/server/server.go": `package server
+
+// TODO: Implement your server logic here
+`,
+		"pkg/utils/utils.go": `package utils
+
+// TODO: Add utility functions here
+`,
+		"README.md": "# " + projectName + `
+
+## Overview
+
+This is a Go project named ` + projectName + `.
+
+
+## Created by
+
+[GoBoost](https://github.com/Hell077/GoBoost)`,
+		".gitignore": `bin/
+*.exe
+*.log`,
+	}
 	for _, dir := range directories {
 		err := os.MkdirAll(filepath.Join(projectDir, dir), os.ModePerm)
 		if err != nil {
