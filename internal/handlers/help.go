@@ -12,8 +12,6 @@ const data = `
   - \README.md\
   - \.gitignore\
 `
-
-// READMEContent содержит содержимое README.md в виде строки с включением переменной data.
 const READMEContent = `
 # GoBoost
 
