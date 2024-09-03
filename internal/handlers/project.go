@@ -74,6 +74,4 @@ func CreateProject() {
 	case "Monorepo Template":
 		monorepo.CreateMonorepoTemplate(projectDir, projectName)
 	}
-
-	fmt.Print("Enter project name: ")
 }
