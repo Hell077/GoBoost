@@ -31,7 +31,9 @@ This is a CLI application project using Go.
 `,
 		".gitignore": `bin/
 *.exe
-*.log`,
+*.log
+.idea
+`,
 	}
 
 	utils.CreateProjectStructure(projectDir, directories, files, projectName)

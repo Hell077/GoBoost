@@ -33,7 +33,9 @@ This is a Go project named ` + projectName + `.
 `,
 		".gitignore": `bin/
 *.exe
-*.log`,
+*.log
+.idea
+`,
 	}
 
 	utils.CreateProjectStructure(projectDir, directories, files, projectName)

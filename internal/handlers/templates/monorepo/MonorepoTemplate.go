@@ -37,7 +37,9 @@ This is a monorepo project using Go.
 `,
 		".gitignore": `bin/
 *.exe
-*.log`,
+*.log
+.idea
+`,
 	}
 
 	utils.CreateProjectStructure(projectDir, directories, files, projectName)
