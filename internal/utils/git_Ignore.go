@@ -1,4 +1,4 @@
-package handlers
+package utils
 
 func Ignore() string {
 	return `

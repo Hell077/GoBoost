@@ -1,7 +1,6 @@
 package cli
 
 import (
-	"github.com/Hell077/GoBoost/internal/handlers"
 	"github.com/Hell077/GoBoost/internal/utils"
 )
 
@@ -32,7 +31,7 @@ func main() {
 
 This is a CLI application project using Go.
 `,
-		".gitignore": handlers.Ignore(),
+		".gitignore": utils.Ignore(),
 	}
 
 	utils.CreateProjectStructure(projectDir, directories, files, projectName)
