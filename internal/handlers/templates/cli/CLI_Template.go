@@ -1,6 +1,9 @@
 package cli
 
-import "github.com/Hell077/GoBoost/internal/utils"
+import (
+	"github.com/Hell077/GoBoost/internal/handlers"
+	"github.com/Hell077/GoBoost/internal/utils"
+)
 
 func CreateCLIAppTemplate(projectDir, projectName string) {
 	directories := []string{
@@ -29,11 +32,7 @@ func main() {
 
 This is a CLI application project using Go.
 `,
-		".gitignore": `bin/
-*.exe
-*.log
-.idea
-`,
+		".gitignore": handlers.Ignore(),
 	}
 
 	utils.CreateProjectStructure(projectDir, directories, files, projectName)

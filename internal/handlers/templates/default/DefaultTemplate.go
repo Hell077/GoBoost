@@ -1,6 +1,7 @@
 package _default
 
 import (
+	"github.com/Hell077/GoBoost/internal/handlers"
 	"github.com/Hell077/GoBoost/internal/utils"
 )
 
@@ -31,12 +32,7 @@ func main() {
 
 This is a Go project named ` + projectName + `.
 `,
-		".gitignore": `bin/
-*.exe
-*.log
-.idea
-`,
+		".gitignore": handlers.Ignore(),
 	}
-
 	utils.CreateProjectStructure(projectDir, directories, files, projectName)
 }
