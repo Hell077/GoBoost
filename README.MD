@@ -45,6 +45,8 @@ GoBoost is a simple tool for initializing a new Go project with a predefined str
 -  goBoost --help or goBoost -h: Displays the content of README.md.
 -  goBoost --update: Checks for updates and replaces the current executable with the latest version
 -  goBoost --build: Automatically searches for and compiles the main.go file within the project.  If **.** is specified, it defaults to cmd/app/main.go. The build process will handle finding the file and building the project.
+-  goBoost --struct: use this command in the root of the project, or in a folder to get the entire file tree
+
 
 ## Project Structure
 
