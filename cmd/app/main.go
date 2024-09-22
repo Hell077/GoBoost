@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/Hell077/GoBoost/internal/goBoostBuild"
+	"github.com/Hell077/GoBoost/internal/goBoostStruct"
 	"github.com/Hell077/GoBoost/internal/handlers"
 	"os"
 	"strings"
@@ -19,6 +20,9 @@ func main() {
 			return
 		case "--build":
 			goBoostBuild.Build()
+			return
+		case "--struct":
+			goBoostStruct.Structure()
 			return
 		default:
 			if args[0] == "create" {
