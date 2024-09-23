@@ -38,6 +38,8 @@ func main() {
 	case "create":
 		handlers.CreateProject()
 		return
+	case "--empty", "--e":
+		handlers.DelEmpty()
 	default:
 		fmt.Printf("Error: Invalid flag '%s'. Use --help or -h for available commands.\n", args[0])
 		return
