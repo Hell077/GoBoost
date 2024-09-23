@@ -7,20 +7,15 @@ import (
 )
 
 func DelEmpty() {
-	err := filepath.WalkDir(".", func(path string, d os.DirEntry, err error) error {
+	err := filepath.Walk(".", func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return err
 		}
-
-		// Проверяем, что это директория
-		if d.IsDir() {
-			// Получаем список файлов в директории
+		if info.IsDir() {
 			entries, err := os.ReadDir(path)
 			if err != nil {
 				return err
 			}
-
-			// Если директория пуста, удаляем ее
 			if len(entries) == 0 {
 				fmt.Printf("Deleting empty directory: %s\n", path)
 				if err := os.Remove(path); err != nil {
@@ -28,7 +23,6 @@ func DelEmpty() {
 				}
 			}
 		}
-
 		return nil
 	})
 
