@@ -24,9 +24,5 @@ func Ignore() string {
 log/
 
 
-
-
-
-
 `
 }

@@ -31,7 +31,8 @@ func main() {
 
 This is a Go project named ` + projectName + `.
 `,
-		".gitignore": utils.Ignore(),
+		".gitignore":     utils.Ignore(),
+		".gitattributes": utils.Attribute(),
 	}
 	utils.CreateProjectStructure(projectDir, directories, files, projectName)
 }

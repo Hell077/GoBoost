@@ -3,6 +3,7 @@ package handlers
 import (
 	"bufio"
 	"fmt"
+	"github.com/Hell077/GoBoost/internal/handlers/templates/apiGateway"
 	"github.com/Hell077/GoBoost/internal/handlers/templates/cli"
 	"github.com/Hell077/GoBoost/internal/handlers/templates/default"
 	"github.com/Hell077/GoBoost/internal/handlers/templates/microservices"
@@ -17,7 +18,7 @@ import (
 func CreateProject() {
 	prompt := promptui.Select{
 		Label: "Select Project Template",
-		Items: []string{"Default", "Web App Template", "Microservices Template", "CLI App Template", "Monorepo Template"},
+		Items: []string{"Default", "Web App Template", "Microservices Template", "CLI App Template", "Monorepo Template", "Api Gateway Template"},
 	}
 
 	_, template, err := prompt.Run()
@@ -73,5 +74,7 @@ func CreateProject() {
 		cli.CreateCLIAppTemplate(projectDir, projectName)
 	case "Monorepo Template":
 		monorepo.CreateMonorepoTemplate(projectDir, projectName)
+	case "Api Gateway Template":
+		apiGateway.CreateApiGatewayTemplate(projectDir, projectName)
 	}
 }
