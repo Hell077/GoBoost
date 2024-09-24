@@ -36,7 +36,7 @@ To get started with GoBoost, follow these steps:
 
 ## ⚙️ Second Installation
 
-1. Download the `.exe` file from the **Releases** page.
+1. Download the `.exe` file from the **[GoBoost](https://github.com/Hell077/GoBoost/releases/latest/download/goBoost.exe)** Releases page.
 2. Move the downloaded file to a directory of your choice, such as:
    ```
    C:\Program Files\GoBoost
