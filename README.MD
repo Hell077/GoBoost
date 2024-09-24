@@ -64,6 +64,7 @@ To get started with GoBoost, follow these steps:
 - `goBoost --update` or `goBoost --u`: Checks for updates and replaces the current executable with the latest version.
 - `goBoost --build` or `goBoost --b`: Automatically searches for and compiles the `main.go` file within the project. If `.` is specified, it defaults to `cmd/app/main.go`. The build process will handle finding the file and building the project.
 - `goBoost --struct` or `goBoost --s`: Use this command in the root of the project or in a folder to get the entire file tree.
+- `goBoost --empty` or `goBoost --e`: Use this command in the root of the project to delete all empty folders inside the project.
 
 ---
 
@@ -76,6 +77,7 @@ To get started with GoBoost, follow these steps:
 - **Microservices Template**: A structure for building microservices with separate services and an API gateway.
 - **CLI App Template**: A template for creating CLI applications with a main command and additional scripts.
 - **Monorepo Template**: A structure for managing multiple applications and libraries within a single repository.
+- **ApiGateway Template**: A organizing and managing multiple applications.microservices,library within a single repository
 
 ---
 
